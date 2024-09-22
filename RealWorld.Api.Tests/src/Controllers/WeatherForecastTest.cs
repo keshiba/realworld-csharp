@@ -1,12 +1,9 @@
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Abstractions;
 using RealWorld.Api.Controllers;
-using RealWorld.Api.Services;
 using Moq;
 using RealWorld.Api.Domain;
 
-namespace RealWorld.Api.Tests;
-
+namespace RealWorld.Api.Tests.Controllers;
 public class WeatherForecastTest
 {
 

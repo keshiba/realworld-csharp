@@ -1,6 +1,6 @@
-
-
 using RealWorld.Api.Services;
+
+namespace RealWorld.Api.Tests.Services;
 
 public class WeatherForecastServiceTest
 {
