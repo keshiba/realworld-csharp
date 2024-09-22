@@ -10,23 +10,20 @@ public class UserController : ControllerBase
 {
     private readonly ILogger<UserController> _logger;
 
-    public UserController(ILogger<UserController> logger)
+    private readonly IUserService _service;
+
+    public UserController(IUserService service, ILogger<UserController> logger)
     {
+        _service = service;
         _logger = logger;
     }
 
     [HttpPost]
-    public ObjectResult RegisterUser()
+    public ObjectResult RegisterUser([FromBody] RegisterUserRequest request)
     {
-        var user = new User(
-            Email: "",
-            Username: "",
-            Bio: "",
-            Image: "",
-            Token: ""
-        );
+        var user = _service.RegisterUser(request);
 
-        return new ObjectResult(user);
+        return new OkObjectResult(user);
     }
 }
 

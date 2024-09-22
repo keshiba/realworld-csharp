@@ -12,10 +12,8 @@ public class WeatherForecastTest
 
     public WeatherForecastTest()
     {
-        var logger = Mock.Of<ILogger<WeatherForecastController>>();
-
         _mockService = new Mock<IWeatherForecastService>();
-        _controller = new WeatherForecastController(_mockService.Object, logger);
+        _controller = new WeatherForecastController(_mockService.Object, Mock.Of<ILogger<WeatherForecastController>>());
     }
 
     [Fact]
